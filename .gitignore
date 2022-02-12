@@ -1,8 +1,9 @@
 node_modules
 dist
-.hass_dev/*
-!.hass_dev/configuration.yaml
-!.hass_dev/ui-lovelace.yaml
-!.hass_dev/lovelace-mushroom-showcase.yaml
-!.hass_dev/views
-!.hass_dev/www
+# TODO(wac): This syntax conflicts with my tooling. I'll readd specific ignore lines as needed.
+# .hass_dev/*
+# !.hass_dev/configuration.yaml
+# !.hass_dev/ui-lovelace.yaml
+# !.hass_dev/lovelace-mushroom-showcase.yaml
+# !.hass_dev/views
+# !.hass_dev/www
