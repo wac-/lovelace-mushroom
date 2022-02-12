@@ -1,5 +1,6 @@
 node_modules
-dist
+# TODO(wac): Need dist for short term testing on GitHub.
+# dist
 # TODO(wac): This syntax conflicts with my tooling. I'll readd specific ignore lines as needed.
 # .hass_dev/*
 # !.hass_dev/configuration.yaml
