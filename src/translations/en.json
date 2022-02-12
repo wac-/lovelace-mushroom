@@ -9,7 +9,8 @@
                 "icon_color": "Icon color",
                 "hide_icon": "Hide icon?",
                 "color_values": {
-                    "default": "Default color"
+                    "default": "Default color",
+                    "device_color": "Current light color"
                 }
             },
             "light": {

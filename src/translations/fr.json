@@ -9,7 +9,8 @@
                 "icon_color": "Couleur de l'icône",
                 "hide_icon": "Cacher l'icône ?",
                 "color_values": {
-                    "default": "Couleur par défaut"
+                    "default": "Couleur par défaut",
+                    "device_color": "Couleur de lumière"
                 }
             },
             "light": {
