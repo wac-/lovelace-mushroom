@@ -763,8 +763,17 @@ const Nt=1,Vt=t=>(...e)=>({_$litDirective$:t,values:e});class Pt{constructor(t){
             mushroom-chip {
                 cursor: pointer;
             }
-            ha-icon.active {
-                color: var(--color);
+            .chip ha-icon {
+                display: flex;
+                color: var(--icon-color);
+                transition: color 280ms ease-in-out;
+                animation: var(--icon-animation);
+            }
+            .chip.disabled {
+                background-color: var(--shape-color-disabled);
+            }
+            .chip.disabled ha-icon {
+                color: var(--icon-color-disabled);
             }
         `}};t([jt({attribute:!1})],Ki.prototype,"hass",void 0),t([Dt()],Ki.prototype,"_config",void 0),Ki=t([Ot(ti("entity"))],Ki);const Wi=new Set(["partlycloudy","cloudy","fog","windy","windy-variant","hail","rainy","snowy","snowy-rainy","pouring","lightning","lightning-rainy"]),Gi=new Set(["hail","rainy","pouring"]),Zi=new Set(["windy","windy-variant"]),Ji=new Set(["snowy","snowy-rainy"]),Qi=new Set(["lightning","lightning-rainy"]),tn=z`
     .rain {
