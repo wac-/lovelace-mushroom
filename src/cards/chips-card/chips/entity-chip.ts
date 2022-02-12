@@ -120,8 +120,17 @@ export class EntityChip extends LitElement implements LovelaceChip {
             mushroom-chip {
                 cursor: pointer;
             }
-            ha-icon.active {
-                color: var(--color);
+            .chip ha-icon {
+                display: flex;
+                color: var(--icon-color);
+                transition: color 280ms ease-in-out;
+                animation: var(--icon-animation);
+            }
+            .chip.disabled {
+                background-color: var(--shape-color-disabled);
+            }
+            .chip.disabled ha-icon {
+                color: var(--icon-color-disabled);
             }
         `;
     }
