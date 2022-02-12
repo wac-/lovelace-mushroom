@@ -101,6 +101,7 @@ export class EntityChipEditor extends LitElement implements LovelaceChipEditor {
                             .configValue=${"icon_color"}
                             @iron-select=${this._valueChanged}
                         >
+                            <!-- TODO(wac): Add device color choice here. -->
                             <paper-item value=""
                                 >${customLocalize(
                                     "editor.card.generic.color_values.default"

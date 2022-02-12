@@ -18,6 +18,11 @@ import {
     computeChipComponentName,
     computeChipEditorComponentName,
 } from "../../../utils/lovelace/chip/chip-element";
+import {
+    getRGBColor,
+    isLight,
+    isSuperLight,
+} from "../../light-card/utils";
 import { EntityChipConfig, LovelaceChip } from "../../../utils/lovelace/chip/types";
 import { LovelaceChipEditor } from "../../../utils/lovelace/types";
 import "./entity-chip-editor";
@@ -66,10 +71,23 @@ export class EntityChip extends LitElement implements LovelaceChip {
 
         const active = isActive(entity);
 
+        const lightRgbColor = getRGBColor(entity);
         const iconStyle = {};
-        if (iconColor) {
-            const iconRgbColor = computeRgbColor(iconColor);
-            iconStyle["--color"] = `rgb(${iconRgbColor})`;
+        if (lightRgbColor && iconColor) {
+            var color: string;
+            if (iconColor == 'device_color') {
+                color = lightRgbColor.join(",");
+            } else {
+                color = computeRgbColor(iconColor);
+            }
+            iconStyle["--icon-color"] = `rgb(${color})`;
+            iconStyle["--shape-color"] = `rgba(${color}, 0.25)`;
+            if (isLight(lightRgbColor) && !(this.hass.themes as any).darkMode) {
+                iconStyle["--shape-outline-color"] = `rgba(var(--rgb-primary-text-color), 0.05)`;
+                if (isSuperLight(lightRgbColor)) {
+                    iconStyle["--icon-color"] = `rgba(var(--rgb-primary-text-color), 0.2)`;
+                }
+            }
         }
 
         const content = getInfo(
